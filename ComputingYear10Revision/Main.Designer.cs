@@ -39,16 +39,25 @@ namespace ComputingYear10Revision
             this.CompareAnswerLbl = new System.Windows.Forms.Label();
             this.ContinueBtn = new System.Windows.Forms.Button();
             this.UserNumberInput = new System.Windows.Forms.NumericUpDown();
+            this.Background = new System.Windows.Forms.PictureBox();
+            this.statsLbl = new System.Windows.Forms.Label();
+            this.NumOfQuestions = new System.Windows.Forms.Label();
+            this.CorrectLabel = new System.Windows.Forms.Label();
+            this.CurrentQuestion = new System.Windows.Forms.Label();
+            this.Percent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UserNumberInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             this.SuspendLayout();
             // 
             // QuestionLbl
             // 
+            this.QuestionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuestionLbl.Location = new System.Drawing.Point(12, 12);
             this.QuestionLbl.Name = "QuestionLbl";
             this.QuestionLbl.Size = new System.Drawing.Size(385, 335);
             this.QuestionLbl.TabIndex = 0;
             this.QuestionLbl.Text = "Question";
+            this.QuestionLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserAnswer
             // 
@@ -139,11 +148,81 @@ namespace ComputingYear10Revision
             this.UserNumberInput.Size = new System.Drawing.Size(382, 38);
             this.UserNumberInput.TabIndex = 9;
             // 
+            // Background
+            // 
+            this.Background.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Background.Location = new System.Drawing.Point(794, 12);
+            this.Background.Name = "Background";
+            this.Background.Size = new System.Drawing.Size(138, 426);
+            this.Background.TabIndex = 10;
+            this.Background.TabStop = false;
+            // 
+            // statsLbl
+            // 
+            this.statsLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.statsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statsLbl.Location = new System.Drawing.Point(794, 15);
+            this.statsLbl.Name = "statsLbl";
+            this.statsLbl.Size = new System.Drawing.Size(138, 32);
+            this.statsLbl.TabIndex = 11;
+            this.statsLbl.Text = "STATS";
+            this.statsLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NumOfQuestions
+            // 
+            this.NumOfQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.NumOfQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumOfQuestions.Location = new System.Drawing.Point(794, 104);
+            this.NumOfQuestions.Name = "NumOfQuestions";
+            this.NumOfQuestions.Size = new System.Drawing.Size(138, 57);
+            this.NumOfQuestions.TabIndex = 12;
+            this.NumOfQuestions.Text = "QUESTIONS";
+            this.NumOfQuestions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CorrectLabel
+            // 
+            this.CorrectLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CorrectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CorrectLabel.Location = new System.Drawing.Point(794, 161);
+            this.CorrectLabel.Name = "CorrectLabel";
+            this.CorrectLabel.Size = new System.Drawing.Size(138, 57);
+            this.CorrectLabel.TabIndex = 13;
+            this.CorrectLabel.Text = "CORRECT";
+            this.CorrectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CurrentQuestion
+            // 
+            this.CurrentQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CurrentQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentQuestion.Location = new System.Drawing.Point(794, 47);
+            this.CurrentQuestion.Name = "CurrentQuestion";
+            this.CurrentQuestion.Size = new System.Drawing.Size(138, 57);
+            this.CurrentQuestion.TabIndex = 14;
+            this.CurrentQuestion.Text = "CURRENT";
+            this.CurrentQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Percent
+            // 
+            this.Percent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Percent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Percent.Location = new System.Drawing.Point(794, 218);
+            this.Percent.Name = "Percent";
+            this.Percent.Size = new System.Drawing.Size(138, 57);
+            this.Percent.TabIndex = 15;
+            this.Percent.Text = "PERCENT";
+            this.Percent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Revision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(944, 450);
+            this.Controls.Add(this.Percent);
+            this.Controls.Add(this.CurrentQuestion);
+            this.Controls.Add(this.CorrectLabel);
+            this.Controls.Add(this.NumOfQuestions);
+            this.Controls.Add(this.statsLbl);
+            this.Controls.Add(this.Background);
             this.Controls.Add(this.UserNumberInput);
             this.Controls.Add(this.ContinueBtn);
             this.Controls.Add(this.CompareAnswerLbl);
@@ -160,6 +239,7 @@ namespace ComputingYear10Revision
             this.Text = "Revision";
             this.Load += new System.EventHandler(this.Revision_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UserNumberInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,6 +256,12 @@ namespace ComputingYear10Revision
         private System.Windows.Forms.Label CompareAnswerLbl;
         private System.Windows.Forms.Button ContinueBtn;
         private System.Windows.Forms.NumericUpDown UserNumberInput;
+        private System.Windows.Forms.PictureBox Background;
+        private System.Windows.Forms.Label statsLbl;
+        private System.Windows.Forms.Label NumOfQuestions;
+        private System.Windows.Forms.Label CorrectLabel;
+        private System.Windows.Forms.Label CurrentQuestion;
+        private System.Windows.Forms.Label Percent;
     }
 }
 

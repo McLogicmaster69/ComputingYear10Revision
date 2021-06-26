@@ -12,10 +12,11 @@ namespace ComputingYear10Revision.Questions
     {
 
         private Question Current;
+        private bool AddToScore = false;
         public int TotalQuestions { get; private set; }
         public int CorrectQuestions { get; set; }
 
-        public QuestionManager(Label questionLabel, Label answerLabel, Label compareLbl, Button continueBtn, Button correctBtn, Button incorrectBtn, Button answerBtn, TextBox userAnswer, NumericUpDown userNumberAnswer, QuestionCompiler compiler)
+        public QuestionManager(Label questionLabel, Label answerLabel, Label compareLbl, Button continueBtn, Button correctBtn, Button incorrectBtn, Button answerBtn, TextBox userAnswer, NumericUpDown userNumberAnswer, QuestionCompiler compiler, StatManager stats)
         {
             QuestionLabel = questionLabel;
             AnswerLabel = answerLabel;
@@ -27,12 +28,19 @@ namespace ComputingYear10Revision.Questions
             UserAnswer = userAnswer;
             UserNumberAnswer = userNumberAnswer;
             Compiler = compiler;
+            Stats = stats;
         }
 
         public void NextQuestion()
         {
+            if (AddToScore)
+            {
+                CorrectQuestions++;
+                AddToScore = false;
+            }
             Current = Compiler.Chuck();
             QuestionLabel.Text = Current.Text;
+            Stats.UpdatePercent(TotalQuestions, CorrectQuestions);
             TotalQuestions++;
             SwitchMain(true);
             switch (Current.Type)
@@ -45,6 +53,7 @@ namespace ComputingYear10Revision.Questions
                     SwitchNumberAnswer(true);
                     break;
             }
+            UpdateStatText();
         }
 
         public void MarkQuestion()
@@ -61,7 +70,7 @@ namespace ComputingYear10Revision.Questions
                     SwitchContinueButton(true);
                     if(((NumberQuestion)Current).Answer == (float)UserNumberAnswer.Value)
                     {
-                        CorrectQuestions++;
+                        AddToScore = true;
                     }
                     SetCorrectAnswer(((NumberQuestion)Current).Answer.ToString());
                     ChangeCompareAnswer(UserNumberAnswer.Value.ToString());
@@ -73,7 +82,7 @@ namespace ComputingYear10Revision.Questions
                     {
                         if(answer.ToLower() == UserAnswer.Text.ToLower())
                         {
-                            CorrectQuestions++;
+                            AddToScore = true;
                             SetCorrectAnswer(answer);
                             break;
                         }
@@ -81,6 +90,7 @@ namespace ComputingYear10Revision.Questions
                     ChangeCompareAnswer(UserAnswer.Text);
                     break;
             }
+            UpdateStatText();
         }
 
         private void SwitchMain(bool question)
@@ -94,6 +104,11 @@ namespace ComputingYear10Revision.Questions
             SwitchUserAnswer(false);
             SwitchNumberAnswer(false);
             SwitchContinueButton(false);
+        }
+
+        private void UpdateStatText()
+        {
+            Stats.UpdateStats((TotalQuestions - 1).ToString(), CorrectQuestions.ToString(), TotalQuestions.ToString());
         }
 
         private void SwitcthCorrectBtns(bool shown)
@@ -139,5 +154,6 @@ namespace ComputingYear10Revision.Questions
         public TextBox UserAnswer { get; }
         public NumericUpDown UserNumberAnswer { get; }
         public QuestionCompiler Compiler { get; }
+        public StatManager Stats { get; }
     }
 }

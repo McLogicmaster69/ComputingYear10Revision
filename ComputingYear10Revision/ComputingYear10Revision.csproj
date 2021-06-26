@@ -64,6 +64,7 @@
     <Compile Include="Questions\QuestionCompiler.cs" />
     <Compile Include="Questions\Lists\QuestionList.cs" />
     <Compile Include="Questions\QuestionManager.cs" />
+    <Compile Include="StatManager.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
