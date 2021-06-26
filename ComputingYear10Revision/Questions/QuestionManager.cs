@@ -38,6 +38,7 @@ namespace ComputingYear10Revision.Questions
             switch (Current.Type)
             {
                 case QuestionType.Explain:
+                case QuestionType.Exact:
                     SwitchUserAnswer(true);
                     break;
                 case QuestionType.Number:
@@ -53,19 +54,31 @@ namespace ComputingYear10Revision.Questions
             {
                 case QuestionType.Explain:
                     SwitcthCorrectBtns(true);
-                    SwitchUserAnswer(false);
                     SetCorrectAnswer(((ExplainQuestion)Current).ExpectedAnswer);
                     ChangeCompareAnswer(UserAnswer.Text);
                     break;
                 case QuestionType.Number:
                     SwitchContinueButton(true);
-                    SwitchNumberAnswer(false);
                     if(((NumberQuestion)Current).Answer == (float)UserNumberAnswer.Value)
                     {
                         CorrectQuestions++;
                     }
                     SetCorrectAnswer(((NumberQuestion)Current).Answer.ToString());
                     ChangeCompareAnswer(UserNumberAnswer.Value.ToString());
+                    break;
+                case QuestionType.Exact:
+                    SwitchContinueButton(true);
+                    SetCorrectAnswer(((ExactQuestion)Current).AcceptedAnswers[0]);
+                    foreach (string answer in ((ExactQuestion)Current).AcceptedAnswers)
+                    {
+                        if(answer.ToLower() == UserAnswer.Text.ToLower())
+                        {
+                            CorrectQuestions++;
+                            SetCorrectAnswer(answer);
+                            break;
+                        }
+                    }
+                    ChangeCompareAnswer(UserAnswer.Text);
                     break;
             }
         }

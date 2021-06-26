@@ -8,7 +8,7 @@ namespace ComputingYear10Revision.Questions.QuestionTypes
 {
     class NumberQuestion : Question
     {
-        public NumberQuestion(string text, float answer) : base(text, false, QuestionType.Number)
+        public NumberQuestion(string text, float answer) : base(text, QuestionType.Number)
         {
             Answer = answer;
         }

@@ -8,7 +8,7 @@ namespace ComputingYear10Revision.Questions.QuestionTypes
 {
     class ExplainQuestion : Question
     {
-        public ExplainQuestion(string text, string expectedAnswer) : base(text, true, QuestionType.Explain)
+        public ExplainQuestion(string text, string expectedAnswer) : base(text, QuestionType.Explain)
         {
             ExpectedAnswer = expectedAnswer;
         }

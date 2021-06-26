@@ -14,7 +14,8 @@ namespace ComputingYear10Revision.Questions
         public List<QuestionList> Lists = new List<QuestionList>()
         {
             new AlgorithimList(),
-            new ComputerSystemsList()
+            new ComputerSystemsList(),
+            new ProgrammingList(),
         };
 
         public QuestionCompiler()
