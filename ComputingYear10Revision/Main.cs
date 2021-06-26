@@ -24,49 +24,29 @@ namespace ComputingYear10Revision
 
         private void Revision_Load(object sender, EventArgs e)
         {
-            Manager = new QuestionManager(QuestionLbl, AnswerLbl);
-            Manager.SetQuestion(Compiler.Chuck());
+            Manager = new QuestionManager(QuestionLbl, AnswerLbl, CompareAnswerLbl, ContinueBtn, CorrectBtn, IncorrectBtn, AnswerBtn, UserAnswer, UserNumberInput, Compiler);
+            Manager.NextQuestion();
         }
 
         private void AnswerBtn_Click(object sender, EventArgs e)
         {
-            Manager.SetAnswer();
-            AnswerQuestion();
-        }
-
-        private void AnswerQuestion()
-        {
-            CompareAnswerLbl.Text = UserAnswer.Text;
-            UserAnswer.Text = "";
-            ChangeState(false);
-        }
-
-        private void ChangeState(bool questionPhase)
-        {
-            QuestionLbl.Visible = questionPhase;
-            AnswerBtn.Visible = questionPhase;
-            UserAnswer.Visible = questionPhase;
-
-            CompareAnswerLbl.Visible = !questionPhase;
-            CorrectBtn.Visible = !questionPhase;
-            IncorrectBtn.Visible = !questionPhase;
-            AnswerLbl.Visible = !questionPhase;
+            Manager.MarkQuestion();
         }
 
         private void CorrectBtn_Click(object sender, EventArgs e)
         {
-            NextQuestion();
+            Manager.CorrectQuestions++;
+            Manager.NextQuestion();
         }
 
         private void IncorrectBtn_Click(object sender, EventArgs e)
         {
-            NextQuestion();
+            Manager.NextQuestion();
         }
 
-        private void NextQuestion()
+        private void ContinueBtn_Click(object sender, EventArgs e)
         {
-            ChangeState(true);
-            Manager.SetQuestion(Compiler.Chuck());
+            Manager.NextQuestion();
         }
     }
 }

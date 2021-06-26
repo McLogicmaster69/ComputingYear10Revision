@@ -1,4 +1,5 @@
 ﻿using ComputingYear10Revision.Questions.Lists;
+using ComputingYear10Revision.Questions.QuestionTypes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace ComputingYear10Revision.Questions
         public List<Question> Questions;
         public List<QuestionList> Lists = new List<QuestionList>()
         {
-            new AlgorithimList()
+            new AlgorithimList(),
+            new ComputerSystemsList()
         };
 
         public QuestionCompiler()

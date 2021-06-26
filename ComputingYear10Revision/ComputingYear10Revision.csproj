@@ -55,7 +55,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Questions\Question.cs" />
+    <Compile Include="Questions\Lists\ComputerSystemsList.cs" />
+    <Compile Include="Questions\QuestionTypes\ExplainQuestion.cs" />
+    <Compile Include="Questions\QuestionTypes\NumberQuestion.cs" />
+    <Compile Include="Questions\QuestionTypes\Question.cs" />
     <Compile Include="Questions\QuestionCompiler.cs" />
     <Compile Include="Questions\Lists\QuestionList.cs" />
     <Compile Include="Questions\QuestionManager.cs" />

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace ComputingYear10Revision.Questions.Lists
 {
-    class AlgorithimList : QuestionList
+    class ComputerSystemsList : QuestionList
     {
         public override List<Question> Questions { get; protected set; } = new List<Question>()
         {
-            new ExplainQuestion("What is an algorithim?", "A sequence of steps or instructions that must be followed to complete a task or solve a problem"),
-            new ExplainQuestion("What is an decomposition?", "Breaking a problem down into a series of sub-problems that are simple enough to solve"),
+            new NumberQuestion("How many bits are in a byte?", 8),
+            new NumberQuestion("How many states does a bit have?", 2)
         };
     }
 }

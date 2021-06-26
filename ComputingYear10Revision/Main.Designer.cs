@@ -29,6 +29,7 @@ namespace ComputingYear10Revision
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Revision));
             this.QuestionLbl = new System.Windows.Forms.Label();
             this.UserAnswer = new System.Windows.Forms.TextBox();
             this.AnswerBtn = new System.Windows.Forms.Button();
@@ -36,6 +37,9 @@ namespace ComputingYear10Revision
             this.IncorrectBtn = new System.Windows.Forms.Button();
             this.AnswerLbl = new System.Windows.Forms.Label();
             this.CompareAnswerLbl = new System.Windows.Forms.Label();
+            this.ContinueBtn = new System.Windows.Forms.Button();
+            this.UserNumberInput = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.UserNumberInput)).BeginInit();
             this.SuspendLayout();
             // 
             // QuestionLbl
@@ -94,6 +98,7 @@ namespace ComputingYear10Revision
             // 
             // AnswerLbl
             // 
+            this.AnswerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnswerLbl.Location = new System.Drawing.Point(12, 12);
             this.AnswerLbl.Name = "AnswerLbl";
             this.AnswerLbl.Size = new System.Drawing.Size(385, 335);
@@ -104,6 +109,7 @@ namespace ComputingYear10Revision
             // 
             // CompareAnswerLbl
             // 
+            this.CompareAnswerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompareAnswerLbl.Location = new System.Drawing.Point(403, 12);
             this.CompareAnswerLbl.Name = "CompareAnswerLbl";
             this.CompareAnswerLbl.Size = new System.Drawing.Size(385, 335);
@@ -112,11 +118,34 @@ namespace ComputingYear10Revision
             this.CompareAnswerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CompareAnswerLbl.Visible = false;
             // 
+            // ContinueBtn
+            // 
+            this.ContinueBtn.BackColor = System.Drawing.Color.Yellow;
+            this.ContinueBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContinueBtn.Location = new System.Drawing.Point(12, 353);
+            this.ContinueBtn.Name = "ContinueBtn";
+            this.ContinueBtn.Size = new System.Drawing.Size(776, 85);
+            this.ContinueBtn.TabIndex = 8;
+            this.ContinueBtn.Text = "CONTINUE";
+            this.ContinueBtn.UseVisualStyleBackColor = false;
+            this.ContinueBtn.Visible = false;
+            this.ContinueBtn.Click += new System.EventHandler(this.ContinueBtn_Click);
+            // 
+            // UserNumberInput
+            // 
+            this.UserNumberInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNumberInput.Location = new System.Drawing.Point(406, 156);
+            this.UserNumberInput.Name = "UserNumberInput";
+            this.UserNumberInput.Size = new System.Drawing.Size(382, 38);
+            this.UserNumberInput.TabIndex = 9;
+            // 
             // Revision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UserNumberInput);
+            this.Controls.Add(this.ContinueBtn);
             this.Controls.Add(this.CompareAnswerLbl);
             this.Controls.Add(this.AnswerLbl);
             this.Controls.Add(this.IncorrectBtn);
@@ -124,9 +153,13 @@ namespace ComputingYear10Revision
             this.Controls.Add(this.AnswerBtn);
             this.Controls.Add(this.UserAnswer);
             this.Controls.Add(this.QuestionLbl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Revision";
             this.Text = "Revision";
             this.Load += new System.EventHandler(this.Revision_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.UserNumberInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +174,8 @@ namespace ComputingYear10Revision
         private System.Windows.Forms.Button IncorrectBtn;
         private System.Windows.Forms.Label AnswerLbl;
         private System.Windows.Forms.Label CompareAnswerLbl;
+        private System.Windows.Forms.Button ContinueBtn;
+        private System.Windows.Forms.NumericUpDown UserNumberInput;
     }
 }
 

@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ComputingYear10Revision.Questions
+namespace ComputingYear10Revision.Questions.QuestionTypes
 {
-    class Question
+    class ExplainQuestion : Question
     {
-        public Question(string text, string expectedAnswer)
+        public ExplainQuestion(string text, string expectedAnswer) : base(text, true, QuestionType.Explain)
         {
-            Text = text;
             ExpectedAnswer = expectedAnswer;
         }
 
-        public string Text { get; }
         public string ExpectedAnswer { get; }
     }
 }
