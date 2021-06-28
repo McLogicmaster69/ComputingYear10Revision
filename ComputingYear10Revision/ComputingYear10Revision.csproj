@@ -61,6 +61,7 @@
     <Compile Include="Questions\QuestionTypes\ExactQuestion.cs" />
     <Compile Include="Questions\QuestionTypes\ExplainQuestion.cs" />
     <Compile Include="Questions\QuestionTypes\MultichoiceQuestion.cs" />
+    <Compile Include="Questions\QuestionTypes\MultipleNumberQuestion.cs" />
     <Compile Include="Questions\QuestionTypes\NumberQuestion.cs" />
     <Compile Include="Questions\QuestionTypes\Question.cs" />
     <Compile Include="Questions\QuestionCompiler.cs" />
