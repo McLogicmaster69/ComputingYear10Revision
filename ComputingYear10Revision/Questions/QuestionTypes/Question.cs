@@ -11,7 +11,8 @@ namespace ComputingYear10Revision.Questions.QuestionTypes
     {
         Explain,
         Number,
-        Exact
+        Exact,
+        Multi
     }
 
     class Question

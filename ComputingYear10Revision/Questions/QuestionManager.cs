@@ -1,6 +1,7 @@
 ﻿using ComputingYear10Revision.Questions.QuestionTypes;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,12 @@ namespace ComputingYear10Revision.Questions
 
         private Question Current;
         private bool AddToScore = false;
+        private int SelectedAnswer = -1;
+        private Button CurrentChoice;
         public int TotalQuestions { get; private set; }
         public int CorrectQuestions { get; set; }
 
-        public QuestionManager(Label questionLabel, Label answerLabel, Label compareLbl, Button continueBtn, Button correctBtn, Button incorrectBtn, Button answerBtn, TextBox userAnswer, NumericUpDown userNumberAnswer, QuestionCompiler compiler, StatManager stats)
+        public QuestionManager(Label questionLabel, Label answerLabel, Label compareLbl, Button continueBtn, Button correctBtn, Button incorrectBtn, Button answerBtn, TextBox userAnswer, NumericUpDown userNumberAnswer, QuestionCompiler compiler, StatManager stats, MultichoiceManager multi)
         {
             QuestionLabel = questionLabel;
             AnswerLabel = answerLabel;
@@ -29,6 +32,7 @@ namespace ComputingYear10Revision.Questions
             UserNumberAnswer = userNumberAnswer;
             Compiler = compiler;
             Stats = stats;
+            Multi = multi;
         }
 
         public void NextQuestion()
@@ -41,6 +45,7 @@ namespace ComputingYear10Revision.Questions
             Current = Compiler.Chuck();
             QuestionLabel.Text = Current.Text;
             Stats.UpdatePercent(TotalQuestions, CorrectQuestions);
+            SelectedAnswer = -1;
             TotalQuestions++;
             SwitchMain(true);
             switch (Current.Type)
@@ -51,6 +56,10 @@ namespace ComputingYear10Revision.Questions
                     break;
                 case QuestionType.Number:
                     SwitchNumberAnswer(true);
+                    break;
+                case QuestionType.Multi:
+                    AnswerBtn.Enabled = false;
+                    SwitchMulti(true);
                     break;
             }
             UpdateStatText();
@@ -89,6 +98,10 @@ namespace ComputingYear10Revision.Questions
                     }
                     ChangeCompareAnswer(UserAnswer.Text);
                     break;
+                case QuestionType.Multi:
+                    SwitchContinueButton(true);
+                    SetCorrectAnswer(((MultichoiceQuestion)Current).GetQuestion(SelectedAnswer));
+                    break;
             }
             UpdateStatText();
         }
@@ -104,6 +117,7 @@ namespace ComputingYear10Revision.Questions
             SwitchUserAnswer(false);
             SwitchNumberAnswer(false);
             SwitchContinueButton(false);
+            SwitchMulti(false);
         }
 
         private void UpdateStatText()
@@ -132,6 +146,11 @@ namespace ComputingYear10Revision.Questions
             ContinueBtn.Visible = shown;
         }
 
+        private void SwitchMulti(bool shown)
+        {
+            Multi.SwitchVisible(shown);
+        }
+
         private void ChangeCompareAnswer(string text)
         {
             CompareLbl.Text = text;
@@ -142,6 +161,14 @@ namespace ComputingYear10Revision.Questions
         private void SetCorrectAnswer(string Answer)
         {
             AnswerLabel.Text = Answer;
+        }
+
+        public void ChangeChoice(int Choice, Button btn)
+        {
+            CurrentChoice.BackColor = Color.Red;
+            CurrentChoice = btn;
+            btn.BackColor = Color.Green;
+            SelectedAnswer = Choice;
         }
 
         public Label QuestionLabel { get; }
@@ -155,5 +182,6 @@ namespace ComputingYear10Revision.Questions
         public NumericUpDown UserNumberAnswer { get; }
         public QuestionCompiler Compiler { get; }
         public StatManager Stats { get; }
+        public MultichoiceManager Multi { get; }
     }
 }

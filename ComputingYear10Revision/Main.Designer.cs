@@ -45,6 +45,10 @@ namespace ComputingYear10Revision
             this.CorrectLabel = new System.Windows.Forms.Label();
             this.CurrentQuestion = new System.Windows.Forms.Label();
             this.Percent = new System.Windows.Forms.Label();
+            this.Choice1 = new System.Windows.Forms.Button();
+            this.Choice2 = new System.Windows.Forms.Button();
+            this.Choice3 = new System.Windows.Forms.Button();
+            this.Choice4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UserNumberInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +74,7 @@ namespace ComputingYear10Revision
             // AnswerBtn
             // 
             this.AnswerBtn.BackColor = System.Drawing.Color.Yellow;
+            this.AnswerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnswerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnswerBtn.Location = new System.Drawing.Point(12, 353);
             this.AnswerBtn.Name = "AnswerBtn";
@@ -82,6 +87,7 @@ namespace ComputingYear10Revision
             // CorrectBtn
             // 
             this.CorrectBtn.BackColor = System.Drawing.Color.Lime;
+            this.CorrectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CorrectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorrectBtn.Location = new System.Drawing.Point(403, 353);
             this.CorrectBtn.Name = "CorrectBtn";
@@ -95,6 +101,7 @@ namespace ComputingYear10Revision
             // IncorrectBtn
             // 
             this.IncorrectBtn.BackColor = System.Drawing.Color.Red;
+            this.IncorrectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.IncorrectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IncorrectBtn.Location = new System.Drawing.Point(12, 353);
             this.IncorrectBtn.Name = "IncorrectBtn";
@@ -130,6 +137,7 @@ namespace ComputingYear10Revision
             // ContinueBtn
             // 
             this.ContinueBtn.BackColor = System.Drawing.Color.Yellow;
+            this.ContinueBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ContinueBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContinueBtn.Location = new System.Drawing.Point(12, 353);
             this.ContinueBtn.Name = "ContinueBtn";
@@ -212,11 +220,59 @@ namespace ComputingYear10Revision
             this.Percent.Text = "PERCENT";
             this.Percent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Choice1
+            // 
+            this.Choice1.BackColor = System.Drawing.Color.Red;
+            this.Choice1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Choice1.Location = new System.Drawing.Point(408, 104);
+            this.Choice1.Name = "Choice1";
+            this.Choice1.Size = new System.Drawing.Size(380, 38);
+            this.Choice1.TabIndex = 16;
+            this.Choice1.Text = "1";
+            this.Choice1.UseVisualStyleBackColor = false;
+            // 
+            // Choice2
+            // 
+            this.Choice2.BackColor = System.Drawing.Color.Red;
+            this.Choice2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Choice2.Location = new System.Drawing.Point(408, 148);
+            this.Choice2.Name = "Choice2";
+            this.Choice2.Size = new System.Drawing.Size(380, 38);
+            this.Choice2.TabIndex = 17;
+            this.Choice2.Text = "2";
+            this.Choice2.UseVisualStyleBackColor = false;
+            // 
+            // Choice3
+            // 
+            this.Choice3.BackColor = System.Drawing.Color.Red;
+            this.Choice3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Choice3.Location = new System.Drawing.Point(408, 192);
+            this.Choice3.Name = "Choice3";
+            this.Choice3.Size = new System.Drawing.Size(380, 38);
+            this.Choice3.TabIndex = 18;
+            this.Choice3.Text = "3";
+            this.Choice3.UseVisualStyleBackColor = false;
+            // 
+            // Choice4
+            // 
+            this.Choice4.BackColor = System.Drawing.Color.Red;
+            this.Choice4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Choice4.Location = new System.Drawing.Point(408, 236);
+            this.Choice4.Name = "Choice4";
+            this.Choice4.Size = new System.Drawing.Size(380, 38);
+            this.Choice4.TabIndex = 19;
+            this.Choice4.Text = "4";
+            this.Choice4.UseVisualStyleBackColor = false;
+            // 
             // Revision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 450);
+            this.Controls.Add(this.Choice4);
+            this.Controls.Add(this.Choice3);
+            this.Controls.Add(this.Choice2);
+            this.Controls.Add(this.Choice1);
             this.Controls.Add(this.Percent);
             this.Controls.Add(this.CurrentQuestion);
             this.Controls.Add(this.CorrectLabel);
@@ -262,6 +318,10 @@ namespace ComputingYear10Revision
         private System.Windows.Forms.Label CorrectLabel;
         private System.Windows.Forms.Label CurrentQuestion;
         private System.Windows.Forms.Label Percent;
+        private System.Windows.Forms.Button Choice1;
+        private System.Windows.Forms.Button Choice2;
+        private System.Windows.Forms.Button Choice3;
+        private System.Windows.Forms.Button Choice4;
     }
 }
 

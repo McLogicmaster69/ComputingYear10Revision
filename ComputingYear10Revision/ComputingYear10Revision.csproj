@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MultichoiceManager.cs" />
     <Compile Include="Questions\Lists\AlgorithimList.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -59,6 +60,7 @@
     <Compile Include="Questions\Lists\ProgrammingList.cs" />
     <Compile Include="Questions\QuestionTypes\ExactQuestion.cs" />
     <Compile Include="Questions\QuestionTypes\ExplainQuestion.cs" />
+    <Compile Include="Questions\QuestionTypes\MultichoiceQuestion.cs" />
     <Compile Include="Questions\QuestionTypes\NumberQuestion.cs" />
     <Compile Include="Questions\QuestionTypes\Question.cs" />
     <Compile Include="Questions\QuestionCompiler.cs" />

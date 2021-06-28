@@ -24,7 +24,7 @@ namespace ComputingYear10Revision
 
         private void Revision_Load(object sender, EventArgs e)
         {
-            Manager = new QuestionManager(QuestionLbl, AnswerLbl, CompareAnswerLbl, ContinueBtn, CorrectBtn, IncorrectBtn, AnswerBtn, UserAnswer, UserNumberInput, Compiler, new StatManager(NumOfQuestions, CorrectLabel, CurrentQuestion, Percent));
+            Manager = new QuestionManager(QuestionLbl, AnswerLbl, CompareAnswerLbl, ContinueBtn, CorrectBtn, IncorrectBtn, AnswerBtn, UserAnswer, UserNumberInput, Compiler, new StatManager(NumOfQuestions, CorrectLabel, CurrentQuestion, Percent), new MultichoiceManager(Choice1, Choice2, Choice3, Choice4));
             Manager.NextQuestion();
         }
 
