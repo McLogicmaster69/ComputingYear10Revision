@@ -55,6 +55,7 @@ namespace ComputingYear10Revision
             // 
             // QuestionLbl
             // 
+            this.QuestionLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(90)))), ((int)(((byte)(186)))));
             this.QuestionLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuestionLbl.Location = new System.Drawing.Point(12, 12);
             this.QuestionLbl.Name = "QuestionLbl";
@@ -65,6 +66,7 @@ namespace ComputingYear10Revision
             // 
             // UserAnswer
             // 
+            this.UserAnswer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(201)))), ((int)(((byte)(38)))));
             this.UserAnswer.Location = new System.Drawing.Point(403, 12);
             this.UserAnswer.Multiline = true;
             this.UserAnswer.Name = "UserAnswer";
@@ -73,7 +75,7 @@ namespace ComputingYear10Revision
             // 
             // AnswerBtn
             // 
-            this.AnswerBtn.BackColor = System.Drawing.Color.Yellow;
+            this.AnswerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(231)))), ((int)(((byte)(76)))));
             this.AnswerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnswerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnswerBtn.Location = new System.Drawing.Point(12, 353);
@@ -86,7 +88,7 @@ namespace ComputingYear10Revision
             // 
             // CorrectBtn
             // 
-            this.CorrectBtn.BackColor = System.Drawing.Color.Lime;
+            this.CorrectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(201)))), ((int)(((byte)(38)))));
             this.CorrectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CorrectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorrectBtn.Location = new System.Drawing.Point(403, 353);
@@ -100,7 +102,7 @@ namespace ComputingYear10Revision
             // 
             // IncorrectBtn
             // 
-            this.IncorrectBtn.BackColor = System.Drawing.Color.Red;
+            this.IncorrectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(27)))), ((int)(((byte)(28)))));
             this.IncorrectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.IncorrectBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IncorrectBtn.Location = new System.Drawing.Point(12, 353);
@@ -114,6 +116,7 @@ namespace ComputingYear10Revision
             // 
             // AnswerLbl
             // 
+            this.AnswerLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(179)))));
             this.AnswerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AnswerLbl.Location = new System.Drawing.Point(12, 12);
             this.AnswerLbl.Name = "AnswerLbl";
@@ -125,10 +128,11 @@ namespace ComputingYear10Revision
             // 
             // CompareAnswerLbl
             // 
+            this.CompareAnswerLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(210)))), ((int)(((byte)(244)))));
             this.CompareAnswerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompareAnswerLbl.Location = new System.Drawing.Point(403, 12);
+            this.CompareAnswerLbl.Location = new System.Drawing.Point(403, 9);
             this.CompareAnswerLbl.Name = "CompareAnswerLbl";
-            this.CompareAnswerLbl.Size = new System.Drawing.Size(385, 335);
+            this.CompareAnswerLbl.Size = new System.Drawing.Size(385, 338);
             this.CompareAnswerLbl.TabIndex = 7;
             this.CompareAnswerLbl.Text = "Answer";
             this.CompareAnswerLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,7 +140,7 @@ namespace ComputingYear10Revision
             // 
             // ContinueBtn
             // 
-            this.ContinueBtn.BackColor = System.Drawing.Color.Yellow;
+            this.ContinueBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(231)))), ((int)(((byte)(76)))));
             this.ContinueBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ContinueBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContinueBtn.Location = new System.Drawing.Point(12, 353);
@@ -150,6 +154,7 @@ namespace ComputingYear10Revision
             // 
             // UserNumberInput
             // 
+            this.UserNumberInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(191)))), ((int)(((byte)(179)))));
             this.UserNumberInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNumberInput.Location = new System.Drawing.Point(406, 156);
             this.UserNumberInput.Name = "UserNumberInput";
@@ -158,7 +163,7 @@ namespace ComputingYear10Revision
             // 
             // Background
             // 
-            this.Background.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Background.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(17)))));
             this.Background.Location = new System.Drawing.Point(794, 12);
             this.Background.Name = "Background";
             this.Background.Size = new System.Drawing.Size(138, 426);
@@ -167,7 +172,7 @@ namespace ComputingYear10Revision
             // 
             // statsLbl
             // 
-            this.statsLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.statsLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(17)))));
             this.statsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statsLbl.Location = new System.Drawing.Point(794, 15);
             this.statsLbl.Name = "statsLbl";
@@ -178,7 +183,7 @@ namespace ComputingYear10Revision
             // 
             // NumOfQuestions
             // 
-            this.NumOfQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.NumOfQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(17)))));
             this.NumOfQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumOfQuestions.Location = new System.Drawing.Point(794, 104);
             this.NumOfQuestions.Name = "NumOfQuestions";
@@ -189,7 +194,7 @@ namespace ComputingYear10Revision
             // 
             // CorrectLabel
             // 
-            this.CorrectLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CorrectLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(17)))));
             this.CorrectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorrectLabel.Location = new System.Drawing.Point(794, 161);
             this.CorrectLabel.Name = "CorrectLabel";
@@ -200,7 +205,7 @@ namespace ComputingYear10Revision
             // 
             // CurrentQuestion
             // 
-            this.CurrentQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CurrentQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(17)))));
             this.CurrentQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentQuestion.Location = new System.Drawing.Point(794, 47);
             this.CurrentQuestion.Name = "CurrentQuestion";
@@ -211,7 +216,7 @@ namespace ComputingYear10Revision
             // 
             // Percent
             // 
-            this.Percent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Percent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(127)))), ((int)(((byte)(17)))));
             this.Percent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Percent.Location = new System.Drawing.Point(794, 218);
             this.Percent.Name = "Percent";
@@ -222,9 +227,9 @@ namespace ComputingYear10Revision
             // 
             // Choice1
             // 
-            this.Choice1.BackColor = System.Drawing.Color.Red;
+            this.Choice1.BackColor = System.Drawing.Color.White;
             this.Choice1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Choice1.Location = new System.Drawing.Point(408, 104);
+            this.Choice1.Location = new System.Drawing.Point(408, 90);
             this.Choice1.Name = "Choice1";
             this.Choice1.Size = new System.Drawing.Size(380, 38);
             this.Choice1.TabIndex = 16;
@@ -234,9 +239,9 @@ namespace ComputingYear10Revision
             // 
             // Choice2
             // 
-            this.Choice2.BackColor = System.Drawing.Color.Red;
+            this.Choice2.BackColor = System.Drawing.Color.White;
             this.Choice2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Choice2.Location = new System.Drawing.Point(408, 148);
+            this.Choice2.Location = new System.Drawing.Point(408, 134);
             this.Choice2.Name = "Choice2";
             this.Choice2.Size = new System.Drawing.Size(380, 38);
             this.Choice2.TabIndex = 17;
@@ -246,9 +251,9 @@ namespace ComputingYear10Revision
             // 
             // Choice3
             // 
-            this.Choice3.BackColor = System.Drawing.Color.Red;
+            this.Choice3.BackColor = System.Drawing.Color.White;
             this.Choice3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Choice3.Location = new System.Drawing.Point(408, 192);
+            this.Choice3.Location = new System.Drawing.Point(408, 178);
             this.Choice3.Name = "Choice3";
             this.Choice3.Size = new System.Drawing.Size(380, 38);
             this.Choice3.TabIndex = 18;
@@ -258,9 +263,9 @@ namespace ComputingYear10Revision
             // 
             // Choice4
             // 
-            this.Choice4.BackColor = System.Drawing.Color.Red;
+            this.Choice4.BackColor = System.Drawing.Color.White;
             this.Choice4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Choice4.Location = new System.Drawing.Point(408, 236);
+            this.Choice4.Location = new System.Drawing.Point(408, 222);
             this.Choice4.Name = "Choice4";
             this.Choice4.Size = new System.Drawing.Size(380, 38);
             this.Choice4.TabIndex = 19;
@@ -272,6 +277,7 @@ namespace ComputingYear10Revision
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(114)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(944, 450);
             this.Controls.Add(this.Choice4);
             this.Controls.Add(this.Choice3);
