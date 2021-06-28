@@ -59,7 +59,27 @@ namespace ComputingYear10Revision.Questions
                     break;
                 case QuestionType.Multi:
                     AnswerBtn.Enabled = false;
-                    SwitchMulti(true);
+                    if (((MultichoiceQuestion)Current).C4 != "")
+                    {
+                        Multi.C4.Visible = true;
+                        Multi.C3.Visible = true;
+                        Multi.C4.Text = ((MultichoiceQuestion)Current).C4;
+                        Multi.C3.Text = ((MultichoiceQuestion)Current).C3;
+                    }
+                    else if (((MultichoiceQuestion)Current).C3 != "")
+                    {
+                        Multi.C3.Visible = true;
+                        Multi.C3.Text = ((MultichoiceQuestion)Current).C3;
+                    }
+                    else
+                    {
+
+                    }
+                    Multi.C1.Visible = true;
+                    Multi.C2.Visible = true;
+                    Multi.C1.Text = ((MultichoiceQuestion)Current).C1;
+                    Multi.C2.Text = ((MultichoiceQuestion)Current).C2;
+
                     break;
             }
             UpdateStatText();
@@ -99,8 +119,14 @@ namespace ComputingYear10Revision.Questions
                     ChangeCompareAnswer(UserAnswer.Text);
                     break;
                 case QuestionType.Multi:
+                    CurrentChoice.BackColor = Color.Red;
                     SwitchContinueButton(true);
                     SetCorrectAnswer(((MultichoiceQuestion)Current).GetQuestion(SelectedAnswer));
+                    if(SelectedAnswer == ((MultichoiceQuestion)Current).CorrectAnswer)
+                    {
+                        AddToScore = true;
+                    }
+                    ChangeCompareAnswer(((MultichoiceQuestion)Current).GetCorrect());
                     break;
             }
             UpdateStatText();
@@ -165,10 +191,12 @@ namespace ComputingYear10Revision.Questions
 
         public void ChangeChoice(int Choice, Button btn)
         {
-            CurrentChoice.BackColor = Color.Red;
+            if(CurrentChoice != null)
+                CurrentChoice.BackColor = Color.Red;
             CurrentChoice = btn;
             btn.BackColor = Color.Green;
             SelectedAnswer = Choice;
+            AnswerBtn.Enabled = true;
         }
 
         public Label QuestionLabel { get; }

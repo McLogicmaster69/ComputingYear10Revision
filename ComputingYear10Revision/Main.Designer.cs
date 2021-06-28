@@ -230,6 +230,7 @@ namespace ComputingYear10Revision
             this.Choice1.TabIndex = 16;
             this.Choice1.Text = "1";
             this.Choice1.UseVisualStyleBackColor = false;
+            this.Choice1.Click += new System.EventHandler(this.Choice1_Click);
             // 
             // Choice2
             // 
@@ -241,6 +242,7 @@ namespace ComputingYear10Revision
             this.Choice2.TabIndex = 17;
             this.Choice2.Text = "2";
             this.Choice2.UseVisualStyleBackColor = false;
+            this.Choice2.Click += new System.EventHandler(this.Choice2_Click);
             // 
             // Choice3
             // 
@@ -252,6 +254,7 @@ namespace ComputingYear10Revision
             this.Choice3.TabIndex = 18;
             this.Choice3.Text = "3";
             this.Choice3.UseVisualStyleBackColor = false;
+            this.Choice3.Click += new System.EventHandler(this.Choice3_Click);
             // 
             // Choice4
             // 
@@ -263,6 +266,7 @@ namespace ComputingYear10Revision
             this.Choice4.TabIndex = 19;
             this.Choice4.Text = "4";
             this.Choice4.UseVisualStyleBackColor = false;
+            this.Choice4.Click += new System.EventHandler(this.Choice4_Click);
             // 
             // Revision
             // 

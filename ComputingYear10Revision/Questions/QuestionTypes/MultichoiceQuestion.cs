@@ -59,5 +59,21 @@ namespace ComputingYear10Revision.Questions.QuestionTypes
             }
             throw new Exception("ERROR: Question outside of options");
         }
+
+        public string GetCorrect()
+        {
+            switch (CorrectAnswer)
+            {
+                case 1:
+                    return C1;
+                case 2:
+                    return C2;
+                case 3:
+                    return C3;
+                case 4:
+                    return C4;
+            }
+            throw new Exception("ERROR: Question outside of options");
+        }
     }
 }
