@@ -55,6 +55,7 @@ namespace ComputingYear10Revision.Questions
                     SwitchUserAnswer(true);
                     break;
                 case QuestionType.Number:
+                case QuestionType.MultiNumber:
                     SwitchNumberAnswer(true);
                     break;
                 case QuestionType.Multi:
@@ -127,6 +128,20 @@ namespace ComputingYear10Revision.Questions
                         AddToScore = true;
                     }
                     ChangeCompareAnswer(((MultichoiceQuestion)Current).GetCorrect());
+                    break;
+                case QuestionType.MultiNumber:
+                    SwitchContinueButton(true);
+                    SetCorrectAnswer(((MultipleNumberQuestion)Current).AcceptedAnswers[0].ToString());
+                    foreach(float answer in ((MultipleNumberQuestion)Current).AcceptedAnswers)
+                    {
+                        if(answer == (float)UserNumberAnswer.Value)
+                        {
+                            AddToScore = true;
+                            SetCorrectAnswer(answer.ToString());
+                            break;
+                        }
+                    }
+                    ChangeCompareAnswer(UserNumberAnswer.Value.ToString());
                     break;
             }
             UpdateStatText();

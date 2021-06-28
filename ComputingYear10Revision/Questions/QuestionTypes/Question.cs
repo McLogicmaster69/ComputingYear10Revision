@@ -12,7 +12,8 @@ namespace ComputingYear10Revision.Questions.QuestionTypes
         Explain,
         Number,
         Exact,
-        Multi
+        Multi,
+        MultiNumber
     }
 
     class Question
