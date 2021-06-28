@@ -66,15 +66,23 @@ namespace ComputingYear10Revision.Questions
                         Multi.C3.Visible = true;
                         Multi.C4.Text = ((MultichoiceQuestion)Current).C4;
                         Multi.C3.Text = ((MultichoiceQuestion)Current).C3;
+                        Multi.C1.Location = new Point { X = 408, Y = 90};
+                        Multi.C2.Location = new Point { X = 408, Y = 134};
+                        Multi.C3.Location = new Point { X = 408, Y = 178};
+                        Multi.C3.Location = new Point { X = 408, Y = 222};
                     }
                     else if (((MultichoiceQuestion)Current).C3 != "")
                     {
                         Multi.C3.Visible = true;
                         Multi.C3.Text = ((MultichoiceQuestion)Current).C3;
+                        Multi.C1.Location = new Point { X = 408, Y = 112 };
+                        Multi.C2.Location = new Point { X = 408, Y = 156 };
+                        Multi.C3.Location = new Point { X = 408, Y = 200 };
                     }
                     else
                     {
-
+                        Multi.C1.Location = new Point { X = 408, Y = 134 };
+                        Multi.C2.Location = new Point { X = 408, Y = 178 };
                     }
                     Multi.C1.Visible = true;
                     Multi.C2.Visible = true;
@@ -207,9 +215,9 @@ namespace ComputingYear10Revision.Questions
         public void ChangeChoice(int Choice, Button btn)
         {
             if(CurrentChoice != null)
-                CurrentChoice.BackColor = Color.Red;
+                CurrentChoice.BackColor = Color.FromArgb(255, 255, 255);
             CurrentChoice = btn;
-            btn.BackColor = Color.Green;
+            btn.BackColor = Color.FromArgb(83, 221, 108);
             SelectedAnswer = Choice;
             AnswerBtn.Enabled = true;
         }
