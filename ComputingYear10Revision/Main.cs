@@ -48,5 +48,25 @@ namespace ComputingYear10Revision
         {
             Manager.NextQuestion();
         }
+
+        private void Choice1_Click(object sender, EventArgs e)
+        {
+            Manager.ChangeChoice(1, (Button)sender);
+        }
+
+        private void Choice2_Click(object sender, EventArgs e)
+        {
+            Manager.ChangeChoice(2, (Button)sender);
+        }
+
+        private void Choice3_Click(object sender, EventArgs e)
+        {
+            Manager.ChangeChoice(3, (Button)sender);
+        }
+
+        private void Choice4_Click(object sender, EventArgs e)
+        {
+            Manager.ChangeChoice(4, (Button)sender);
+        }
     }
 }
