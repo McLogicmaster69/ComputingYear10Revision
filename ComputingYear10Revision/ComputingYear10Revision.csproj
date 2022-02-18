@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimationManager.cs" />
     <Compile Include="MultichoiceManager.cs" />
     <Compile Include="Questions\Lists\AlgorithimList.cs" />
     <Compile Include="Main.cs">
