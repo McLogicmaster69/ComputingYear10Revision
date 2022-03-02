@@ -157,7 +157,10 @@ namespace ComputingYear10Revision.Questions
 
         private void SwitchMain(bool question)
         {
-            AnswerBtn.Visible = question;
+            if (question)
+                AnswerBtn.Visible = question;
+            else
+                AnimationManager.Shrink(AnswerBtn, 0.02f);
             QuestionLabel.Visible = question;
             AnswerLabel.Visible = !question;
             CompareLbl.Visible = !question;
@@ -167,6 +170,8 @@ namespace ComputingYear10Revision.Questions
             SwitchNumberAnswer(false);
             SwitchContinueButton(false);
             SwitchMulti(false);
+
+            //AnimationManager.Shrink(new Control[] { AnswerBtn, QuestionLabel, AnswerLabel, CompareLbl }, 0.5f);
         }
 
         private void UpdateStatText()

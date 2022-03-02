@@ -75,6 +75,7 @@ namespace ComputingYear10Revision
             // 
             // AnswerBtn
             // 
+            this.AnswerBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AnswerBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(192)))), ((int)(((byte)(219)))));
             this.AnswerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AnswerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,7 +164,7 @@ namespace ComputingYear10Revision
             // 
             // Background
             // 
-            this.Background.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(112)))), ((int)(((byte)(125)))));
+            this.Background.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(194)))), ((int)(((byte)(219)))));
             this.Background.Location = new System.Drawing.Point(794, 12);
             this.Background.Name = "Background";
             this.Background.Size = new System.Drawing.Size(138, 426);
@@ -172,7 +173,7 @@ namespace ComputingYear10Revision
             // 
             // statsLbl
             // 
-            this.statsLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(112)))), ((int)(((byte)(125)))));
+            this.statsLbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(194)))), ((int)(((byte)(219)))));
             this.statsLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statsLbl.Location = new System.Drawing.Point(794, 15);
             this.statsLbl.Name = "statsLbl";
@@ -183,7 +184,7 @@ namespace ComputingYear10Revision
             // 
             // NumOfQuestions
             // 
-            this.NumOfQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(112)))), ((int)(((byte)(125)))));
+            this.NumOfQuestions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(194)))), ((int)(((byte)(219)))));
             this.NumOfQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumOfQuestions.Location = new System.Drawing.Point(794, 104);
             this.NumOfQuestions.Name = "NumOfQuestions";
@@ -194,7 +195,7 @@ namespace ComputingYear10Revision
             // 
             // CorrectLabel
             // 
-            this.CorrectLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(112)))), ((int)(((byte)(125)))));
+            this.CorrectLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(194)))), ((int)(((byte)(219)))));
             this.CorrectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CorrectLabel.Location = new System.Drawing.Point(794, 161);
             this.CorrectLabel.Name = "CorrectLabel";
@@ -205,7 +206,7 @@ namespace ComputingYear10Revision
             // 
             // CurrentQuestion
             // 
-            this.CurrentQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(112)))), ((int)(((byte)(125)))));
+            this.CurrentQuestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(194)))), ((int)(((byte)(219)))));
             this.CurrentQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentQuestion.Location = new System.Drawing.Point(794, 47);
             this.CurrentQuestion.Name = "CurrentQuestion";
@@ -216,7 +217,7 @@ namespace ComputingYear10Revision
             // 
             // Percent
             // 
-            this.Percent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(112)))), ((int)(((byte)(125)))));
+            this.Percent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(194)))), ((int)(((byte)(219)))));
             this.Percent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Percent.Location = new System.Drawing.Point(794, 218);
             this.Percent.Name = "Percent";
