@@ -16,11 +16,28 @@ namespace ComputingYear10Revision.Questions
         private bool AddToScore = false;
         private int SelectedAnswer = -1;
         private Button CurrentChoice;
+        private Random rand;
         public int TotalQuestions { get; private set; }
         public int CorrectQuestions { get; set; }
 
+        /// <summary>
+        /// Instantiate Class
+        /// </summary>
+        /// <param name="questionLabel">The label of the question</param>
+        /// <param name="answerLabel">The label of the answer</param>
+        /// <param name="compareLbl">The label of the compare</param>
+        /// <param name="continueBtn">The continue button</param>
+        /// <param name="correctBtn">The correct button</param>
+        /// <param name="incorrectBtn">The incorrect button</param>
+        /// <param name="answerBtn">The answer button</param>
+        /// <param name="userAnswer">The user's answer</param>
+        /// <param name="userNumberAnswer">The user's number input</param>
+        /// <param name="compiler">The question compiler</param>
+        /// <param name="stats">The user's stats</param>
+        /// <param name="multi">The multichoice manager</param>
         public QuestionManager(Label questionLabel, Label answerLabel, Label compareLbl, Button continueBtn, Button correctBtn, Button incorrectBtn, Button answerBtn, TextBox userAnswer, NumericUpDown userNumberAnswer, QuestionCompiler compiler, StatManager stats, MultichoiceManager multi)
         {
+            rand = new Random();
             QuestionLabel = questionLabel;
             AnswerLabel = answerLabel;
             CompareLbl = compareLbl;
@@ -33,8 +50,12 @@ namespace ComputingYear10Revision.Questions
             Compiler = compiler;
             Stats = stats;
             Multi = multi;
+            compiler.SetQueue(ShuffleList(compiler.Questions));
         }
 
+        /// <summary>
+        /// Load the next question
+        /// </summary>
         public void NextQuestion()
         {
             if (AddToScore)
@@ -42,7 +63,12 @@ namespace ComputingYear10Revision.Questions
                 CorrectQuestions++;
                 AddToScore = false;
             }
-            Current = Compiler.Chuck();
+            Current = Compiler.NextInQueue();
+            if(Current.Type == QuestionType.EndFlag)
+            {
+                Console.WriteLine("No more questions");
+                return;
+            }
             QuestionLabel.Text = Current.Text;
             Stats.UpdatePercent(TotalQuestions, CorrectQuestions);
             SelectedAnswer = -1;
@@ -60,12 +86,13 @@ namespace ComputingYear10Revision.Questions
                     break;
                 case QuestionType.Multi:
                     AnswerBtn.Enabled = false;
+                    List<string> answers = new List<string>() { ((MultichoiceQuestion)Current).C1, ((MultichoiceQuestion)Current).C2 };
                     if (((MultichoiceQuestion)Current).C4 != "")
                     {
                         Multi.C4.Visible = true;
                         Multi.C3.Visible = true;
-                        Multi.C4.Text = ((MultichoiceQuestion)Current).C4;
-                        Multi.C3.Text = ((MultichoiceQuestion)Current).C3;
+                        answers.Add(((MultichoiceQuestion)Current).C4);
+                        answers.Add(((MultichoiceQuestion)Current).C3);
                         Multi.C1.Location = new Point { X = 408, Y = 90};
                         Multi.C2.Location = new Point { X = 408, Y = 134};
                         Multi.C3.Location = new Point { X = 408, Y = 178};
@@ -74,7 +101,7 @@ namespace ComputingYear10Revision.Questions
                     else if (((MultichoiceQuestion)Current).C3 != "")
                     {
                         Multi.C3.Visible = true;
-                        Multi.C3.Text = ((MultichoiceQuestion)Current).C3;
+                        answers.Add(((MultichoiceQuestion)Current).C3);
                         Multi.C1.Location = new Point { X = 408, Y = 112 };
                         Multi.C2.Location = new Point { X = 408, Y = 156 };
                         Multi.C3.Location = new Point { X = 408, Y = 200 };
@@ -84,16 +111,35 @@ namespace ComputingYear10Revision.Questions
                         Multi.C1.Location = new Point { X = 408, Y = 134 };
                         Multi.C2.Location = new Point { X = 408, Y = 178 };
                     }
+                    answers = ShuffleList(answers);
+                    if (((MultichoiceQuestion)Current).C4 != "")
+                    {
+                        Multi.C1.Text = answers[0];
+                        Multi.C2.Text = answers[1];
+                        Multi.C3.Text = answers[2];
+                        Multi.C4.Text = answers[3];
+                    }
+                    else if (((MultichoiceQuestion)Current).C3 != "")
+                    {
+                        Multi.C1.Text = answers[0];
+                        Multi.C2.Text = answers[1];
+                        Multi.C3.Text = answers[2];
+                    }
+                    else
+                    {
+                        Multi.C1.Text = answers[0];
+                        Multi.C2.Text = answers[1];
+                    }
                     Multi.C1.Visible = true;
                     Multi.C2.Visible = true;
-                    Multi.C1.Text = ((MultichoiceQuestion)Current).C1;
-                    Multi.C2.Text = ((MultichoiceQuestion)Current).C2;
 
                     break;
             }
             UpdateStatText();
         }
-
+        /// <summary>
+        /// Marks the current question
+        /// </summary>
         public void MarkQuestion()
         {
             SwitchMain(false);
@@ -128,7 +174,7 @@ namespace ComputingYear10Revision.Questions
                     ChangeCompareAnswer(UserAnswer.Text);
                     break;
                 case QuestionType.Multi:
-                    CurrentChoice.BackColor = Color.Red;
+                    CurrentChoice.BackColor = Color.White;
                     SwitchContinueButton(true);
                     SetCorrectAnswer(((MultichoiceQuestion)Current).GetQuestion(SelectedAnswer));
                     if(SelectedAnswer == ((MultichoiceQuestion)Current).CorrectAnswer)
@@ -155,12 +201,22 @@ namespace ComputingYear10Revision.Questions
             UpdateStatText();
         }
 
+        /// <summary>
+        /// Switches the UI
+        /// </summary>
+        /// <param name="question"></param>
         private void SwitchMain(bool question)
         {
             if (question)
                 AnswerBtn.Visible = question;
             else
-                AnimationManager.Shrink(AnswerBtn, 0.02f);
+            {
+                if (Current.Type == QuestionType.Multi)
+                    AnimationManager.Shrink(new Control[] { AnswerBtn, Multi.C1, Multi.C2, Multi.C3, Multi.C4}, 0.02f);
+                else
+                    AnimationManager.Shrink(AnswerBtn, 0.02f);
+                
+            }
             QuestionLabel.Visible = question;
             AnswerLabel.Visible = !question;
             CompareLbl.Visible = !question;
@@ -239,5 +295,27 @@ namespace ComputingYear10Revision.Questions
         public QuestionCompiler Compiler { get; }
         public StatManager Stats { get; }
         public MultichoiceManager Multi { get; }
+
+        /// <summary>
+        /// Shuffles a list randomly
+        /// </summary>
+        /// <typeparam name="T">The list type</typeparam>
+        /// <param name="list">The input list</param>
+        /// <returns></returns>
+        public List<T> ShuffleList<T>(List<T> list)
+        {
+            // Variables
+            List<T> shuffle = new List<T>();
+            int len = list.Count;
+
+            // Shuffle
+            for (int i = 0; i < len; i++)
+            {
+                int ran = rand.Next(0, list.Count);
+                shuffle.Add(list[ran]);
+                list.RemoveAt(ran);
+            }
+            return shuffle;
+        }
     }
 }

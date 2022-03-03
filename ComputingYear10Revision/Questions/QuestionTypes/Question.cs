@@ -9,6 +9,7 @@ namespace ComputingYear10Revision.Questions.QuestionTypes
 
     public enum QuestionType
     {
+        EndFlag,
         Explain,
         Number,
         Exact,

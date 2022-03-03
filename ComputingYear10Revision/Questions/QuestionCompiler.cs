@@ -10,7 +10,8 @@ namespace ComputingYear10Revision.Questions
 {
     sealed class QuestionCompiler
     {
-        public List<Question> Questions;
+        public List<Question> Questions { get; private set; }
+        public List<Question> Queue { get; private set; }
         public List<QuestionList> Lists = new List<QuestionList>()
         {
             new AlgorithimList(),
@@ -39,6 +40,18 @@ namespace ComputingYear10Revision.Questions
         {
             Random rnd = new Random();
             return Questions[rnd.Next(0, Questions.Count)];
+        }
+        public void SetQueue(List<Question> queue)
+        {
+            Queue = queue;
+        }
+        public Question NextInQueue()
+        {
+            if (Queue.Count == 0)
+                return new EndFlag();
+            Question next = Queue[0];
+            Queue.RemoveAt(0);
+            return next;
         }
     }
 }

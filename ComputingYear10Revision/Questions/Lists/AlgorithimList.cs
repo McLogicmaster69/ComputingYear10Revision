@@ -20,6 +20,8 @@ namespace ComputingYear10Revision.Questions.Lists
             new ExplainQuestion("How does a merge sort work?", ">The original list is divided into a list of discrete elements.\n>The elements are then combined into a sorted list."),
 
             new MultichoiceQuestion("What is the following:\nA sequence of steps or instructions that must be followed to complete a task or solve a problem", "Algorithim", "Decomposition", "Abstraction", 1),
+            new MultichoiceQuestion("What is the following:\nBreaking a problem down into a series of sub-problems that are simple enough to solve", "Algorithim", "Decomposition", "Abstraction", 2),
+            new MultichoiceQuestion("What is the following:\nRemoving unnecessary detail from a problem to make it easier to solve", "Algorithim", "Decomposition", "Abstraction", 3),
         };
     }
 }

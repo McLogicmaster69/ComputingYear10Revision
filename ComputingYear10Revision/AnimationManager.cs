@@ -28,22 +28,29 @@ namespace ComputingYear10Revision
         }
         public static void Shrink(Control[] obj, float time)
         {
-            List<Size> sizes = new List<Size>();
-            foreach(Control c in obj)
+            List<Size> originalSize = new List<Size>();
+            List<Point> originalPosition = new List<Point>();
+            List<int> startMid = new List<int>();
+            foreach (Control c in obj)
             {
-                sizes.Add(c.Size);
+                originalSize.Add(c.Size);
+                originalPosition.Add(c.Location);
+                startMid.Add(c.Location.X + c.Size.Width / 2);
             }
-            for (int i = (int)Math.Floor(time * 1000); i >= 0; i--)
+            for (int i = (int)(Math.Floor(time * 1000) / 2); i >= 0; i--)
             {
                 Thread.Sleep(1);
-                for (int j = 0; j < sizes.Count; j++)
+                for (int j = 0; j < obj.Length; j++)
                 {
-                    obj[j].Size = new Size((int)Math.Floor(sizes[j].Width * i / (float)Math.Floor(time * 1000)), sizes[j].Height);
+                    obj[j].Size = new Size((int)(Math.Floor(originalSize[j].Width * i / (float)(Math.Floor(time * 1000) / 2))), originalSize[j].Height);
+                    obj[j].Location = new Point(startMid[j] - (int)Math.Floor(obj[j].Size.Width / 2f), originalPosition[j].Y);
                 }
             }
-            foreach(Control c in obj)
+            for (int j = 0; j < obj.Length; j++)
             {
-                c.Visible = false;
+                obj[j].Visible = false;
+                obj[j].Size = originalSize[j];
+                obj[j].Location = originalPosition[j];
             }
         }
     }

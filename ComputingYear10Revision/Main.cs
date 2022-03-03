@@ -14,7 +14,7 @@ namespace ComputingYear10Revision
     public partial class Revision : Form
     {
 
-        QuestionCompiler Compiler = new QuestionCompiler();
+        QuestionCompiler Compiler;
         QuestionManager Manager;
 
         public Revision()
@@ -24,6 +24,7 @@ namespace ComputingYear10Revision
 
         private void Revision_Load(object sender, EventArgs e)
         {
+            Compiler = new QuestionCompiler();
             Manager = new QuestionManager(QuestionLbl, AnswerLbl, CompareAnswerLbl, ContinueBtn, CorrectBtn, IncorrectBtn, AnswerBtn, UserAnswer, UserNumberInput, Compiler, new StatManager(NumOfQuestions, CorrectLabel, CurrentQuestion, Percent), new MultichoiceManager(Choice1, Choice2, Choice3, Choice4));
             Manager.NextQuestion();
         }
